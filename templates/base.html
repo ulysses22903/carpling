@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>{% block title %}Carpling{% endblock %}</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+    {% block head %}{% endblock %}
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='image/LOGO.png') }}" alt="Logo">
+            </div>
+            
+            <input type="text" placeholder="車名で検索" id="simpleTextbox">
+            <div class="login">
+            <a href="{{ url_for('login') }}" class="login-link">ログイン</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; sk14 carpling</p>
+    </footer>
+</body>
+
+</html>
+
